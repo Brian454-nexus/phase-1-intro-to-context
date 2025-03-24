@@ -46,3 +46,10 @@ function hoursWorkedOnDate(employee, date) {
     return hours;                                                              // Returns hours as an integer
 }
 
+// Calculates wages earned on a specific date
+function wagesEarnedOnDate(employee, date) {
+    const hours = hoursWorkedOnDate(employee, date); // Gets hours worked on that date
+    const wages = hours * employee.payPerHour;       // Multiplies hours by pay rate
+    return wages;                                    // Returns total pay for the date
+}
+
