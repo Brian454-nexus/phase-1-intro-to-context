@@ -38,3 +38,11 @@ function createTimeOutEvent(employee, dateStamp) {
     return employee;                           // Returns the updated employee record
 }
 
+// Calculates hours worked on a specific date
+function hoursWorkedOnDate(employee, date) {
+    const timeIn = employee.timeInEvents.find(event => event.date === date);   // Finds the TimeIn event for the date
+    const timeOut = employee.timeOutEvents.find(event => event.date === date); // Finds the TimeOut event for the date
+    const hours = (timeOut.hour - timeIn.hour) / 100;                          // Difference in hours (e.g., 1800 - 800 = 10 hours)
+    return hours;                                                              // Returns hours as an integer
+}
+
