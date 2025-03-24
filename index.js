@@ -11,3 +11,8 @@ function createEmployeeRecord(employeeData) {
     };
 }
 
+// Turns an array of arrays into an array of employee records
+function createEmployeeRecords(arrayOfArrays) {
+    return arrayOfArrays.map(data => createEmployeeRecord(data)); // Maps each inner array to a record
+}
+
