@@ -16,3 +16,13 @@ function createEmployeeRecords(arrayOfArrays) {
     return arrayOfArrays.map(data => createEmployeeRecord(data)); // Maps each inner array to a record
 }
 
+// Adds a "TimeIn" event to an employee's record
+function createTimeInEvent(employee, dateStamp) {
+    const [date, hour] = dateStamp.split(" "); // Splits "YYYY-MM-DD HHMM" into date and hour
+    employee.timeInEvents.push({               // Adds a new event to timeInEvents array
+        type: "TimeIn",                        // Event type is "TimeIn"
+        hour: parseInt(hour, 10),              // Converts hour string to integer (e.g., "800" to 800)
+        date: date                             // Stores the date part (e.g., "2018-01-01")
+    });
+    return employee;                           // Returns the updated employee record
+}
