@@ -62,3 +62,10 @@ function allWagesFor(employee) {
     return totalWages;                                            // Returns total pay as a number
 }
 
+// Calculates total payroll for all employees
+function calculatePayroll(employeeRecords) {
+    const totalPayroll = employeeRecords.reduce((total, employee) => { // Adds up wages for all employees
+        return total + allWagesFor(employee);                          // Accumulates total payroll
+    }, 0);                                                             // Starts total at 0
+    return totalPayroll;                                               // Returns total pay for all employees
+}
