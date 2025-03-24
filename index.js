@@ -53,3 +53,12 @@ function wagesEarnedOnDate(employee, date) {
     return wages;                                    // Returns total pay for the date
 }
 
+// Calculates total wages for all dates worked by an employee
+function allWagesFor(employee) {
+    const dates = employee.timeInEvents.map(event => event.date); // Gets all dates from timeInEvents
+    const totalWages = dates.reduce((total, date) => {            // Adds up wages for each date
+        return total + wagesEarnedOnDate(employee, date);         // Accumulates total pay
+    }, 0);                                                        // Starts total at 0
+    return totalWages;                                            // Returns total pay as a number
+}
+
